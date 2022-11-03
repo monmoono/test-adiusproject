@@ -31,6 +31,24 @@
         </v-card>
       </v-col>
     </v-row>
+    <!-- toast -->
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="1000"
+      :value="true"
+      absolute
+      top
+      color="success"
+    >
+      <v-icon dark large> mdi-checkbox-marked-circle </v-icon>
+      {{ "Login successful." }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn color="white" text v-bind="attrs" @click="snackbar = false">
+          X
+        </v-btn>
+      </template>
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -38,6 +56,7 @@
 import axios from "axios";
 export default {
   name: "App",
+  snackbar: false,
   data: () => ({
     items: [],
   }),
@@ -56,10 +75,11 @@ export default {
         };
         arr.push(obj);
       }
+      this.snackbar = true;
       //Show data by sort the characters in a string alphabetically
       arr.sort((a, b) => {
-        const nameA = a.first_name.toUpperCase(); 
-        const nameB = b.first_name.toUpperCase(); 
+        const nameA = a.first_name.toUpperCase();
+        const nameB = b.first_name.toUpperCase();
         if (nameA < nameB) {
           return -1;
         }
@@ -68,7 +88,7 @@ export default {
         }
         // names must be equal
         return 0;
-      });
+      });      
       this.items = arr;
       console.log(arr);
     });

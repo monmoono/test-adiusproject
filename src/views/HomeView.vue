@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Index from "../components/Index";
+import Index from "../components/index";
 
 export default {
   name: "home",

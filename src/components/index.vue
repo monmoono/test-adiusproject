@@ -10,21 +10,27 @@
               elementum enim vitae ullamcorper suspendisse.Vivamus fringilla.
             </p>
           </v-col>
-          <v-col cols="3" sm="3" class="mx-4">
-            <v-list-item three-line v-for="(item, index) in items" :key="index">
-              <template>
-                <img
-                  :src="item.avatar"
-                  style="width: 75px; height: 75px; border-radius: 50%"
-                />
-              </template>
-              <v-list-item-content class="mx-3">
+
+          <v-col cols="4" sm="3" lg="2">
+            <v-card
+              three-line
+              v-for="(item, index) in items"
+              :key="index"
+              width="400px"
+            >
+              <img
+                :src="item.avatar"
+                style="width: 75px; height: 75px; border-radius: 50%"
+              />
+              <h4>{{ item.first_name + " " + item.last_name }}</h4>
+              <h8>{{ item.email }}</h8>
+              <!-- <v-list-item-content class="mx-3">
                 <v-list-item-title>{{
                   item.first_name + " " + item.last_name
                 }}</v-list-item-title>
                 <v-list-item-subtitle>{{ item.email }}</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+              </v-list-item-content> -->
+            </v-card>
           </v-col>
         </v-row>
       </v-container>

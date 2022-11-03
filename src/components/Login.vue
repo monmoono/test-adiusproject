@@ -140,6 +140,7 @@ export default {
         })
         .then((response) => {
           console.log("success", response);
+          //check remember me == true setItemlocalStorage
           if (this.ChkRemember) {
             console.log(this.ChkRemember);
             const vals = JSON.stringify({
