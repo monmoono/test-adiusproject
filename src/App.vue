@@ -6,8 +6,8 @@
           @click="drawer = true"
           class="d-flex d-sm-none"
         ></v-app-bar-nav-icon>
-
-        <v-img
+        <router-link to="/" tag="span" style="cursor: pointer" >       
+           <v-img
           alt="Vuetify Name"
           class="shrink mt-1"
           contain
@@ -15,18 +15,25 @@
           src="@/assets/logo2.png"
           width="150"
         />
+        </router-link>      
 
         <v-menu offset-y open-on-hover :close-on-content-click="true">
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="blue lighten-2" class="mx-2"> Sign up </v-btn>
-            <v-btn color="lighten-0" class="mx-2" @click="GotoLogin">
+            <router-link to="/Login" tag="span" style="cursor: pointer" >       
+            <v-btn color="lighten-0" class="mx-2" >
               sign in
             </v-btn>
+        </router-link>      
+            <!-- <v-btn color="lighten-0" class="mx-2" @click="GotoLogin">
+              sign in
+            </v-btn> -->
             <v-spacer></v-spacer>
             <v-btn
               color="blue lighten-2"
               class="mx-2"
               href="https://vuetifyjs.com/en/introduction/why-vuetify/"
+              target="_blank"
             >
               Docs
             </v-btn>
@@ -34,6 +41,7 @@
               color="blue lighten-2"
               class="mx-2"
               href="https://www.google.com/"
+              target="_blank"
             >
               Pricing
             </v-btn>
@@ -244,8 +252,8 @@ export default {
   methods: {
     GotoLogin() {
       console.log("login");
-      this.$router.push({ name: "login" });
-    },
+      this.$router.push({ name: "Login", path: "/Login" });
+    }    
   },
 };
 </script>
