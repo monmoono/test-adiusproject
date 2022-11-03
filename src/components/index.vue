@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-main class="com">
+      <h1 class="welcome mainsitecolor">Welcome to website</h1>
       <v-container flat>
         <v-row no-gutters class="container1">
           <v-col class="box1">
@@ -66,6 +67,7 @@ export default {
 </script>
 
 <style lang="sass">
+@import './src/assets/button.sass'
 .box1
   grid-area: Box1
 
@@ -107,4 +109,13 @@ export default {
 
 .com
   margin-top: 8%
+
+.welcome
+  text-align: center
+  font-size: 4rem
+  margin-bottom: 3%
+  color: #FFF
+  margin-left: 30rem
+  margin-right: 30rem
+  border-radius: 1.5rem
 </style>

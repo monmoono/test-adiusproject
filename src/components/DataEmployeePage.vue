@@ -9,7 +9,7 @@
           lg="3"
           v-for="(item, index) in items"
           :key="index"
-        >
+        >          
           <v-card
             style="margin-right: auto !important; margin-left: auto !important"
             align="center"
