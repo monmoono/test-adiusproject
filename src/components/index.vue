@@ -1,39 +1,32 @@
 <template>
   <v-app>
     <v-main>
-      <v-container flat>
-        <v-row no-gutters>
-          <v-col cols="3" sm="3">
-            <h1>Meet our leadership</h1>
-            <p>
-              Libero fames augue nisl porttitor nisi,quis. Id ac elit odio vitae
-              elementum enim vitae ullamcorper suspendisse.Vivamus fringilla.
-            </p>
-          </v-col>
-
-          <v-col cols="4" sm="3" lg="2">
-            <v-card
-              three-line
-              v-for="(item, index) in items"
-              :key="index"
-              width="400px"
-            >
+      <v-row justify="center" class="container1">
+        <v-col class="box1">
+          <h1>Meet our leadership</h1>
+          <p>
+            Libero fames augue nisl porttitor nisi,quis. Id ac elit odio vitae
+            elementum enim vitae ullamcorper suspendisse.Vivamus fringilla.
+          </p>
+        </v-col>
+        <v-col class="box2">
+          <v-list-item three-line v-for="(item, index) in items" :key="index">
+            <template>
               <img
                 :src="item.avatar"
                 style="width: 75px; height: 75px; border-radius: 50%"
               />
+            </template>
+            <v-list-item-content>
               <h4>{{ item.first_name + " " + item.last_name }}</h4>
-              <h8>{{ item.email }}</h8>
-              <!-- <v-list-item-content class="mx-3">
-                <v-list-item-title>{{
-                  item.first_name + " " + item.last_name
-                }}</v-list-item-title>
-                <v-list-item-subtitle>{{ item.email }}</v-list-item-subtitle>
-              </v-list-item-content> -->
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
+              <h5 class="emailtext">{{ item.email }}</h5>
+            </v-list-item-content>
+          </v-list-item>
+        </v-col>
+      </v-row>
+      <!-- <v-container flat>
+       
+      </v-container> -->
     </v-main>
     <!-- <v-card class="flex" flat tile>
       <v-card-title> </v-card-title>
@@ -71,3 +64,24 @@ export default {
   methods: {},
 };
 </script>
+
+<style lang="sass">
+.box1
+  grid-area: Box1
+  width: 32rem
+
+.box2
+  display: grid
+  grid-area: Box2
+  grid-template-columns: auto auto
+
+
+.container1
+  display: grid
+  grid-template-areas: "Box1 Box2 Box2 Box2 Box2"
+  gap: 1rem
+  padding: 1rem
+
+.emailtext
+  color: #3F51B5
+</style>

@@ -18,7 +18,6 @@
             <h4>Sign in with</h4>
             <v-btn
               class="btnSignin"
-              color="grey lighten-2"
               href="https://www.facebook.com/login.php/"
               target="_blank"
             >
@@ -26,7 +25,6 @@
             </v-btn>
             <v-btn
               class="btnSignin"
-              color="grey lighten-2"
               href="https://twitter.com/login/"
               target="_blank"
             >
@@ -34,7 +32,6 @@
             </v-btn>
             <v-btn
               class="btnSignin"
-              color="grey lighten-2"
               href="https://www.facebook.com/login.php/"
               target="_blank"
             >
@@ -50,7 +47,6 @@
                 name="email"
                 prepend-inner-icon="mdi-email"
                 type="email"
-                class="rounded-0"
                 outlined
               ></v-text-field>
               <v-text-field
@@ -59,7 +55,6 @@
                 name="password"
                 prepend-inner-icon="mdi-lock"
                 type="password"
-                class="rounded-0"
                 outlined
               ></v-text-field>
               <v-card-actions>
@@ -71,13 +66,7 @@
                 <v-spacer></v-spacer>
                 <a helf="">Forgot your password?</a>
               </v-card-actions>
-              <v-btn
-                class="rounded-0"
-                color="blue lighten-2"
-                x-large
-                block
-                dark
-                @click="Login"
+              <v-btn class="btn info" x-large block dark @click="Login"
                 >Login</v-btn
               >
             </v-form>
@@ -101,13 +90,13 @@
         :value="true"
         absolute
         top
-        color="error"
+        color="#C62828"
       >
         <v-icon dark large> mdi-cancel </v-icon>
         {{ "Email or password is wrong." }}
 
         <template v-slot:action="{ attrs }">
-          <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
+          <v-btn color="#E91E63" text v-bind="attrs" @click="snackbar = false">
             X
           </v-btn>
         </template>
@@ -177,9 +166,11 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import './src/assets/button.sass'
 .btnSignin
   width: 9rem
   margin: 0.5rem
+  background-color: #6c757d
 
 .h5-line
   position: relative

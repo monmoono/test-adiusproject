@@ -19,31 +19,26 @@
 
         <v-menu offset-y open-on-hover :close-on-content-click="true">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="blue lighten-2" class="mx-2"> Sign up </v-btn>
+            <v-btn class="btn info"> Sign up </v-btn>
             <router-link to="/Login" tag="span" style="cursor: pointer">
-              <v-btn color="green lighten-1" class="mx-2"> sign in </v-btn>
+              <v-btn class="btn success"> sign in </v-btn>
             </router-link>
-            <!-- <v-btn color="lighten-0" class="mx-2" @click="GotoLogin">
-              sign in
-            </v-btn> -->
             <v-spacer></v-spacer>
             <v-btn
-              color="blue lighten-2"
-              class="mx-2"
+              class="btn info"
               href="https://vuetifyjs.com/en/introduction/why-vuetify/"
               target="_blank"
             >
               Docs
             </v-btn>
             <v-btn
-              color="blue lighten-2"
-              class="mx-2"
+              class="btn info"
               href="https://www.google.com/"
               target="_blank"
             >
               Pricing
             </v-btn>
-            <v-btn color="blue lighten-2" v-bind="attrs" v-on="on" class="mx-2">
+            <v-btn v-bind="attrs" v-on="on" class="btn info">
               Solutions
               <v-icon>mdi-chevron-down </v-icon>
             </v-btn>
@@ -58,7 +53,7 @@
                   link
                 >
                   <v-list-item-icon
-                    ><v-icon color="blue lighten-2">{{
+                    ><v-icon class="info" style="border-radius: 0.2rem">{{
                       item.icon
                     }}</v-icon></v-list-item-icon
                   >
@@ -76,7 +71,7 @@
                   link
                 >
                   <v-list-item-icon
-                    ><v-icon color="blue lighten-2">{{
+                    ><v-icon class="info" style="border-radius: 0.2rem">{{
                       item.icon
                     }}</v-icon></v-list-item-icon
                   >
@@ -114,7 +109,7 @@
 
     <v-footer dark padless>
       <v-card class="flex" flat tile>
-        <v-card-title class="deep-purple">
+        <v-card-title class="mainsitecolor">
           <v-row no-gutters>
             <v-col cols="1" sm="1">
               <v-img
@@ -169,13 +164,13 @@
               </p>
               <div class="textboxfooter">
                 <v-text-field></v-text-field
-                ><v-btn class="blue lighten-2"> SUBMIT</v-btn>
+                ><v-btn class="btn info"> SUBMIT</v-btn>
               </div>
             </v-col>
           </v-row>
         </v-card-title>
 
-        <v-card-text class="py-2 white--text text-center"
+        <v-card-text class="lastfooter"
           ><strong>Years</strong> {{ new Date().getFullYear() }} —
           <strong>Vuetify</strong>
         </v-card-text>
@@ -251,32 +246,28 @@ export default {
     GotoLogin() {
       console.log("login");
       this.$router.push({ name: "Login", path: "/Login" });
-    }, 
+    },
   },
 };
 </script>
 
 <style lang="sass" scoped>
+@import './src/assets/button.sass'
+
 .grid-container
   background-color: rgba(240, 240, 240, 1)
-  // display: grid
   column-count: 2
   max-width: 50rem
-  // grid-template-columns: auto auto
-  // background-color: #2196F3
   padding: 10px
 
 .grid-item
   background-color: rgba(240, 240, 240, 1)
-  // border: 1px solid rgba(0, 0, 0, 0.8)
   padding: 20px
   font-size: 30px
-  // text-align: center
   column-span: 1
 
 .grid-buttom
   background-color: rgba(220, 220, 220, 1)
-  // border: 1px solid rgba(0, 0, 0, 0.8)
   padding: 20px
   font-size: 30px
   column-span: all
@@ -284,24 +275,18 @@ export default {
 // CssFooter
 .grid-footer
   background-color: rgba(240, 240, 240, 1)
-  // display: grid
   column-count: 2
   max-width: 50rem
-  // grid-template-columns: auto auto
-  // background-color: #2196F3
   padding: 10px
 
 .grid-footer-item
   background-color: rgba(240, 240, 240, 1)
-  // border: 1px solid rgba(0, 0, 0, 0.8)
   padding: 20px
   font-size: 30px
-  // text-align: center
   column-span: 1
 
 .grid-footer-button
   background-color: rgba(220, 220, 220, 1)
-  // border: 1px solid rgba(0, 0, 0, 0.8)
   padding: 20px
   font-size: 30px
   column-span: all
@@ -313,5 +298,11 @@ export default {
 .textboxfooter
   display: flex
   margin-right: 5rem
-  ag
+
+.lastfooter
+  text-align: center !important
+  padding-top: 8px !important
+  padding-bottom: 8px !important
+  color: #ffffff !important
+  caret-color: #ffffff !important
 </style>
