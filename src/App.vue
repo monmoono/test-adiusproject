@@ -6,25 +6,23 @@
           @click="drawer = true"
           class="d-flex d-sm-none"
         ></v-app-bar-nav-icon>
-        <router-link to="/" tag="span" style="cursor: pointer" >       
-           <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1"
-          contain
-          min-width="100"
-          src="@/assets/logo2.png"
-          width="150"
-        />
-        </router-link>      
+        <router-link to="/" tag="span" style="cursor: pointer">
+          <v-img
+            alt="Vuetify Name"
+            class="shrink mt-1"
+            contain
+            min-width="100"
+            src="@/assets/logo2.png"
+            width="150"
+          />
+        </router-link>
 
         <v-menu offset-y open-on-hover :close-on-content-click="true">
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="blue lighten-2" class="mx-2"> Sign up </v-btn>
-            <router-link to="/Login" tag="span" style="cursor: pointer" >       
-            <v-btn color="lighten-0" class="mx-2" >
-              sign in
-            </v-btn>
-        </router-link>      
+            <router-link to="/Login" tag="span" style="cursor: pointer">
+              <v-btn color="green lighten-1" class="mx-2"> sign in </v-btn>
+            </router-link>
             <!-- <v-btn color="lighten-0" class="mx-2" @click="GotoLogin">
               sign in
             </v-btn> -->
@@ -253,7 +251,7 @@ export default {
     GotoLogin() {
       console.log("login");
       this.$router.push({ name: "Login", path: "/Login" });
-    }    
+    }, 
   },
 };
 </script>

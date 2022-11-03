@@ -16,13 +16,28 @@
           <v-divider></v-divider>
           <div style="padding-top: 20px">
             <h4>Sign in with</h4>
-            <v-btn class="btnSignin" color="grey lighten-2">
+            <v-btn
+              class="btnSignin"
+              color="grey lighten-2"
+              href="https://www.facebook.com/login.php/"
+              target="_blank"
+            >
               <v-icon>mdi-facebook</v-icon>
             </v-btn>
-            <v-btn class="btnSignin" color="grey lighten-2">
+            <v-btn
+              class="btnSignin"
+              color="grey lighten-2"
+              href="https://twitter.com/login/"
+              target="_blank"
+            >
               <v-icon>mdi-twitter</v-icon>
             </v-btn>
-            <v-btn class="btnSignin" color="grey lighten-2">
+            <v-btn
+              class="btnSignin"
+              color="grey lighten-2"
+              href="https://www.facebook.com/login.php/"
+              target="_blank"
+            >
               <v-icon>mdi-github</v-icon>
             </v-btn>
           </div>
@@ -73,7 +88,8 @@
         <v-img
           src="@/assets/wallpaper.jpg"
           aspect-ratio="1"
-          max-height="800"
+          max-height="1000"
+          height="650"
           max-width="600"
         ></v-img>
       </v-col>
@@ -113,8 +129,10 @@ export default {
   methods: {
     Login() {
       // Test Login
+      //  body:{
       //   email: "eve.holt@reqres.in",
       //   password: "cityslicka"
+      //}
       axios
         .post("https://reqres.in/api/login", {
           email: this.email,
@@ -133,7 +151,7 @@ export default {
           } else {
             localStorage.removeItem("localVals");
           }
-          this.$router.push({ name: "index" });
+          this.$router.push({ name: "dataEmployeePage" });
         })
         .catch((err) => {
           this.snackbar = true;
