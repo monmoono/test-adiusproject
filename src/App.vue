@@ -21,14 +21,15 @@
             <v-btn color="blue lighten-2" class="mx-2"> Sign up </v-btn>
             <v-btn color="lighten-0" class="mx-2"> sign in </v-btn>
             <v-spacer></v-spacer>
-            <v-btn color="blue lighten-2" class="mx-2"> Docs </v-btn>
-            <v-btn color="blue lighten-2" class="mx-2"> Pricing </v-btn>
             <v-btn
               color="blue lighten-2"
-              v-bind="attrs"
-              v-on="on"
-              class="dropdown mx-2"
+              class="mx-2"
+              href="https://vuetifyjs.com/en/introduction/why-vuetify/"
             >
+              Docs
+            </v-btn>
+            <v-btn color="blue lighten-2" class="mx-2"> Pricing </v-btn>
+            <v-btn color="blue lighten-2" v-bind="attrs" v-on="on" class="mx-2">
               Solutions
               <v-icon>mdi-chevron-down </v-icon>
             </v-btn>
@@ -71,8 +72,8 @@
                   </v-list-item-content>
                 </v-list-item>
               </div>
-              <div class="grid-button">
-                <v-list-item two-line>
+              <div class="grid-buttom">
+                <v-list-item two-line link>
                   <v-list-item-content>
                     <v-list-item-title
                       >Emterprise<v-icon color="blue lighten-2" large
@@ -91,30 +92,6 @@
         </v-menu>
       </v-app-bar>
       <v-spacer></v-spacer>
-
-      <!-- nav when responsive -->
-      <v-navigation-drawer v-model="drawer" absolute temporary>
-        <v-list nav dense>
-          <v-list-item-group
-            v-model="group"
-            active-class="deep-purple--text text--accent-4"
-          >
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Home</v-list-item-title>
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Account</v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
     </div>
 
     <v-main>
@@ -125,55 +102,69 @@
       <v-card class="flex" flat tile>
         <v-card-title class="deep-purple">
           <v-row no-gutters>
-            <v-col cols="4" sm="4">
-              <strong class="subheading"
-                >Get connected with us on social networks!</strong
+            <v-col cols="1" sm="1">
+              <v-img
+                class="shrink mt-1"
+                contain
+                min-width="90"
+                src="@/assets/logo.png"
+                width="90"
+              />
+            </v-col>
+            <v-col cols="2" sm="2">
+              <v-list-item link
+                ><v-list-item-content>
+                  <v-list-item-title>Products</v-list-item-title>
+                </v-list-item-content></v-list-item
               >
-              <v-divider></v-divider>
-              <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
-                <v-icon size="24px">
-                  {{ icon }}
-                </v-icon>
-              </v-btn>
-            </v-col>
-            <!-- <v-col cols="2" sm="2">
-              <strong class="subheading">solution</strong>
-              <v-list-item >
+              <v-list-item v-for="(item, index) in itemsFt1" :key="index" link>
                 <v-list-item-content>
-                  <a href="">Two-line item</a>
+                  <v-list-item-subtitle>{{ item.title }}</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-col>
-             <v-col cols="2" sm="2">
-              <strong class="subheading">solution</strong>
-              <v-list-item >
+            <v-col cols="2" sm="2">
+              <v-list-item link
+                ><v-list-item-content>
+                  <v-list-item-title>Company</v-list-item-title>
+                </v-list-item-content></v-list-item
+              >
+              <v-list-item v-for="(item, index) in itemsFt2" :key="index" link>
                 <v-list-item-content>
-                  <a href="">Two-line item</a>
+                  <v-list-item-subtitle>{{ item.title }}</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-col>
-             <v-col cols="2" sm="2">
-              <strong class="subheading">solution</strong>
-              <v-list-item >
+            <v-col cols="2" sm="2">
+              <v-list-item link
+                ><v-list-item-content>
+                  <v-list-item-title>Customer Service</v-list-item-title>
+                </v-list-item-content></v-list-item
+              >
+              <v-list-item v-for="(item, index) in itemsFt3" :key="index" link>
                 <v-list-item-content>
-                  <a href="">Two-line item</a>
+                  <v-list-item-subtitle>{{ item.title }}</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-col>
-             <v-col cols="2" sm="2">
-              <strong class="subheading">solution</strong>
-              <v-list-item >
-                <v-list-item-content>
-                  <a href="">Two-line item</a>
-                </v-list-item-content>
-              </v-list-item>
-            </v-col>             -->
+            <v-spacer></v-spacer>
+            <v-col cols="4" sm="4" class="lg">
+              <p><strong>Sign up for our newsistter</strong></p>
+              <p class="subtext">
+                The latest deals and saving, sent to your inbox weekly.
+              </p>
+              <div class="textboxfooter">
+                <v-text-field></v-text-field
+                ><v-btn class="blue lighten-2"> SUBMIT</v-btn>
+              </div>
+            </v-col>
           </v-row>
         </v-card-title>
 
-        <!-- <v-card-text class="py-2 white--text text-center"><strong>Years</strong>
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-card-text> -->
+        <v-card-text class="py-2 white--text text-center"
+          ><strong>Years</strong> {{ new Date().getFullYear() }} —
+          <strong>Vuetify</strong>
+        </v-card-text>
       </v-card>
     </v-footer>
   </v-app>
@@ -217,6 +208,30 @@ export default {
         icon: "mdi-file-chart ",
       },
     ],
+    itemsFt1: [
+      { title: "Bage" },
+      { title: "Tees" },
+      { title: "Object" },
+      { title: "Home Goods" },
+      { title: "Accessories" },
+    ],
+    itemsFt2: [
+      { title: "Who a are" },
+      { title: "Sustainability" },
+      { title: "Press" },
+      { title: "Careers" },
+      { title: "Terms & Conditions" },
+      { title: "Privacy" },
+    ],
+    itemsFt3: [
+      { title: "Contact" },
+      { title: "Shipping" },
+      { title: "Returns" },
+      { title: "Warranty" },
+      { title: "Secure Payments" },
+      { title: "FAQ" },
+      { title: "Find a store" },
+    ],
     icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
   }),
   methods: {
@@ -245,10 +260,44 @@ export default {
   // text-align: center
   column-span: 1
 
-.grid-button
+.grid-buttom
   background-color: rgba(220, 220, 220, 1)
   // border: 1px solid rgba(0, 0, 0, 0.8)
   padding: 20px
   font-size: 30px
   column-span: all
+
+// CssFooter
+.grid-footer
+  background-color: rgba(240, 240, 240, 1)
+  // display: grid
+  column-count: 2
+  max-width: 50rem
+  // grid-template-columns: auto auto
+  // background-color: #2196F3
+  padding: 10px
+
+.grid-footer-item
+  background-color: rgba(240, 240, 240, 1)
+  // border: 1px solid rgba(0, 0, 0, 0.8)
+  padding: 20px
+  font-size: 30px
+  // text-align: center
+  column-span: 1
+
+.grid-footer-button
+  background-color: rgba(220, 220, 220, 1)
+  // border: 1px solid rgba(0, 0, 0, 0.8)
+  padding: 20px
+  font-size: 30px
+  column-span: all
+
+.subtext
+  font-size: 0.75rem
+  opacity: 0.7
+
+.textboxfooter
+  display: flex
+  margin-right: 5rem
+  ag
 </style>
