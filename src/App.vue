@@ -19,7 +19,9 @@
         <v-menu offset-y open-on-hover :close-on-content-click="true">
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="blue lighten-2" class="mx-2"> Sign up </v-btn>
-            <v-btn color="lighten-0" class="mx-2"> sign in </v-btn>
+            <v-btn color="lighten-0" class="mx-2" @click="GotoLogin">
+              sign in
+            </v-btn>
             <v-spacer></v-spacer>
             <v-btn
               color="blue lighten-2"
@@ -28,7 +30,13 @@
             >
               Docs
             </v-btn>
-            <v-btn color="blue lighten-2" class="mx-2"> Pricing </v-btn>
+            <v-btn
+              color="blue lighten-2"
+              class="mx-2"
+              href="https://www.google.com/"
+            >
+              Pricing
+            </v-btn>
             <v-btn color="blue lighten-2" v-bind="attrs" v-on="on" class="mx-2">
               Solutions
               <v-icon>mdi-chevron-down </v-icon>
@@ -232,11 +240,11 @@ export default {
       { title: "FAQ" },
       { title: "Find a store" },
     ],
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
   }),
   methods: {
-    Logout() {
-      this.$router.push({ name: "HomeView" });
+    GotoLogin() {
+      console.log("login");
+      this.$router.push({ name: "login" });
     },
   },
 };

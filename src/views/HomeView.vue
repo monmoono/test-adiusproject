@@ -1,15 +1,17 @@
 <template>
   <hello-world />
+  <!-- <Index /> -->
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import HelloWorld from "../components/HelloWorld";
+import Index from "../components/index";
 
-  export default {
-    name: 'Home',
-
-    components: {
-      HelloWorld,
-    },
-  }
+export default {
+  name: "home",
+  components: {
+    HelloWorld,
+    // index,
+  },
+};
 </script>
