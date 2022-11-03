@@ -44,10 +44,18 @@
                 name="password"
                 prepend-inner-icon="mdi-lock"
                 type="password"
-                suffix="| Forgot?"
                 class="rounded-0"
                 outlined
               ></v-text-field>
+              <v-card-actions>
+                <v-checkbox
+                  color="#000000"
+                  v-model="ChkRemember"
+                  label="Remember me"
+                ></v-checkbox>
+                <v-spacer></v-spacer>
+                <a helf="">Forgot your password?</a>
+              </v-card-actions>
               <v-btn
                 class="rounded-0"
                 color="blue lighten-2"
@@ -57,14 +65,6 @@
                 @click="Login"
                 >Login</v-btn
               >
-              <v-card-actions>
-                <v-checkbox
-                  color="#000000"
-                  v-model="ChkRemember"
-                  label="Remember me"
-                ></v-checkbox>
-                <v-spacer></v-spacer>
-              </v-card-actions>
             </v-form>
           </v-card-text>
         </v-card>
